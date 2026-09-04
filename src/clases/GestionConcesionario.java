@@ -33,5 +33,33 @@ public class GestionConcesionario {
         vehiculos.add(vehiculo);
     }
 
+    /**
+     * Registra una compra realizada por un cliente.
+     *
+     * @param comprador cliente que realiza la compra
+     * @param vehiculo vehículo que se compra
+     */
+    public void registrarCompra(Cliente comprador, Vehiculo vehiculo) {
+
+        if (vehiculos.contains(vehiculo)) {
+
+            Venta nuevaVenta = new Venta(comprador, vehiculo);
+
+            ventas.add(nuevaVenta);
+
+            vehiculos.remove(vehiculo);
+
+            System.out.println("Compra registrada correctamente.");
+            System.out.println(nuevaVenta);
+
+        } else {
+
+            System.out.println(
+                    "El vehículo no se encuentra disponible."
+            );
+        }
+    }
+
+    
    
 }
