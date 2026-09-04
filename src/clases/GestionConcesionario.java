@@ -60,6 +60,76 @@ public class GestionConcesionario {
         }
     }
 
-    
+    /**
+     * Busca la compra de mayor valor.
+     *
+     * Recorre todas las ventas registradas y compara
+     * el valor de cada una para encontrar la más alta.
+     *
+     * @return venta con el mayor valor
+     */
+    public Venta buscarCompraMasAlta() {
+
+        if (ventas.isEmpty()) {
+
+            return null;
+        }
+
+        Venta compraMasAlta = ventas.get(0);
+
+        for (Venta venta : ventas) {
+
+            if (venta.calcularValorVenta()
+                    > compraMasAlta.calcularValorVenta()) {
+
+                compraMasAlta = venta;
+            }
+        }
+
+        return compraMasAlta;
+    }
+
+    /**
+     * Obtiene la lista de vehículos disponibles.
+     *
+     * @return lista de vehículos
+     */
+    public ArrayList<Vehiculo> getVehiculos() {
+
+        return vehiculos;
+    }
+
+    /**
+     * Obtiene la lista de ventas realizadas.
+     *
+     * @return lista de ventas
+     */
+    public ArrayList<Venta> getVentas() {
+
+        return ventas;
+    }
+
+    /**
+     * Muestra todos los vehículos disponibles.
+     */
+    public void mostrarVehiculos() {
+
+        for (Vehiculo vehiculo : vehiculos) {
+
+            System.out.println(vehiculo);
+        }
+    }
+
+    /**
+     * Muestra todas las ventas realizadas.
+     */
+    public void mostrarVentas() {
+
+        for (Venta venta : ventas) {
+
+            System.out.println(venta);
+            System.out.println("--------------------------------");
+        }
+    }
    
 }
