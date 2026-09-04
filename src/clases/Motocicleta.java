@@ -1,22 +1,23 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package clases;
 
 /**
+ * Clase que representa una motocicleta.
  *
- * @author rodrigoaranda
+ * Hereda los atributos y métodos de la clase Vehiculo
+ * y agrega el cilindraje.
+ *
+ * @author Jeferson Alvarez
  */
-public class Motocicleta extends Vehiculo{
+public class Motocicleta extends Vehiculo {
+
     private short cilindraje;
 
-    public Motocicleta(String código, String marca, short modelo, int kilometraje, int precioUnitario, short cilindraje) {
-        //indica que estos datos pertenecen a la superclase
+    public Motocicleta(String código, String marca, short modelo,
+                       int kilometraje, int precioUnitario,
+                       short cilindraje) {
+
         super(código, marca, modelo, kilometraje, precioUnitario);
-        this.cilindraje=cilindraje;
-        
+        this.cilindraje = cilindraje;
     }
 
     public short getCilindraje() {
@@ -29,9 +30,10 @@ public class Motocicleta extends Vehiculo{
 
     @Override
     public String toString() {
-        return  " Vehiculo tipo Motocicleta :  " + super.toString()+" cilindraje = " + cilindraje+"\n";
+        return "Vehiculo tipo Motocicleta : "
+                + super.toString()
+                + ", cilindraje = "
+                + cilindraje
+                + "\n";
     }
-    
-    
-    
 }

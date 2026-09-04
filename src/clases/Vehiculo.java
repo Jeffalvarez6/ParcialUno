@@ -1,22 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package clases;
 
 /**
+ * Clase base que representa un vehículo.
  *
- * @author rodrigoaranda
+ * Esta clase es utilizada como superclase para:
+ * Auto, Camioneta y Motocicleta.
+ *
+ * @author Jeferson Alvarez
  */
 public class Vehiculo {
-   private String código;
-   private String marca;
-   private short modelo;
-   private int kilometraje;
-   private int precioUnitario; //se toma del contexto del problema porque se relizan ventas
 
-    public Vehiculo(String código, String marca, short modelo, int kilometraje, int precioUnitario) {
+    private String código;
+    private String marca;
+    private short modelo;
+    private int kilometraje;
+    private int precioUnitario;
+
+  
+    public Vehiculo(String código, String marca, short modelo,
+                    int kilometraje, int precioUnitario) {
+
         this.código = código;
         this.marca = marca;
         this.modelo = modelo;
@@ -66,9 +69,10 @@ public class Vehiculo {
 
     @Override
     public String toString() {
-        return "c\u00f3digo = " + código + ", marca=" + marca + ", modelo=" + modelo + ", kilometraje=" + kilometraje + ", precioUnitario = " + precioUnitario;
+        return "código = " + código
+                + ", marca = " + marca
+                + ", modelo = " + modelo
+                + ", kilometraje = " + kilometraje
+                + ", precioUnitario = " + precioUnitario;
     }
-   
-   
-           
 }
